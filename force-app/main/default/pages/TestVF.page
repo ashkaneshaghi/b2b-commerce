@@ -1,0 +1,22 @@
+<apex:page id="B2BchangePassword" showHeader="false" standardStyleSheets="false" controller="ShowLwcOnVfController" title="Test">
+
+    <apex:includeLightning />    
+    <div id="lwc" />
+    <script>
+        $Lightning.use("c:TestApp", function() {
+            $Lightning.createComponent("c:showOnVfPage",
+              {
+                footerJson: {!footerJson}
+              },
+              "lwc",
+              function(cmp) {
+                 console.log('LWC Componenet added in VF page');
+              });
+        });
+    </script>
+    <div>
+        THIS IS <br />
+        {!footerJson}
+    </div>
+
+</apex:page>
